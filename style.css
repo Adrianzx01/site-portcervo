@@ -1,0 +1,402 @@
+/* 1. Configurações Globais e Cores */
+:root {
+    --bg-color: #0d0d0d;       /* Preto profundo */
+    --card-bg: #1a1a1a;        /* Cinza escuro para os cards */
+    --text-color: #e0e0e0;     /* Branco acinzentado (confortável aos olhos) */
+    --accent-color: #8b5cf6;   /* Roxo Neon (pode trocar por qualquer cor) */
+    --status-visto: #10b981;   /* Verde para concluídos */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+}
+
+/* 2. Menu de Navegação Sombrio */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 1px solid #333;
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color);
+}
+
+/* 3. Layout das Seções */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.categoria {
+    margin-bottom: 4rem;
+}
+
+.categoria h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 4. A Grade de Itens (Grid) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+/* 5. Os Cards (Estética Dark) */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Faz todos os cards da mesma linha terem a mesma altura */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(139, 92, 246, 0.2);
+    border-color: var(--accent-color);
+}
+
+.card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+    filter: grayscale(20%); /* Dá um ar mais sóbrio */
+    transition: 0.3s;
+}
+
+.card:hover img {
+    filter: grayscale(0%);
+}
+
+.card-info {
+    padding: 15px;
+    flex-grow: 1; /* Faz a área de texto preencher o card */
+}
+
+.card-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #fff;
+    /* Removemos o 'nowrap' para o texto poder pular linha */
+    white-space: normal; 
+    word-wrap: break-word; /* Garante que palavras gigantes não quebrem o layout */
+}
+
+.card-info p {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.card-info strong {
+    color: var(--accent-color);
+}
+
+.nota {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+}
+
+.filtros {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-filtro {
+    background: #1a1a1a;
+    color: #aaa;
+    border: 1px solid #333;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn-filtro:hover {
+    border-color: var(--accent-color);
+    color: #fff;
+}
+
+.btn-filtro.active {
+    background: var(--accent-color);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    border-color: var(--accent-color);
+}
+
+.detalhes p {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+    color: #ccc;
+}
+
+.detalhes {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+/* Esconde todas as seções por padrão */
+.aba-conteudo {
+    display: none;
+    animation: fadeIn 0.5s; /* Um efeito suave de aparecer */
+}
+
+/* Mostra apenas a que tiver a classe 'active' */
+.aba-conteudo.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Deixar o link do menu destacado quando ativo */
+nav a.active-link {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.discord-profile {
+    background-color: #111; /* Cor de fundo do perfil */
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.banner {
+    height: 120px; /* Ou a altura que você já definiu */
+    width: 100%;
+    background-image: url('assets/seu-banner.gif'); /* Caminho do seu GIF */
+    background-size: cover; /* Faz o GIF ocupar todo o espaço sem sobrar fundo */
+    background-position: center; /* Centraliza a animação */
+    border-bottom: 1px solid #333;
+}
+
+.profile-header {
+    padding: 0 20px;
+    display: flex;
+    align-items: flex-end;
+    margin-top: -45px; /* Sobe a foto para cima do banner */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 6px solid #111;
+    background-color: #333;
+    object-fit: cover;
+}
+
+.user-info h1 {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.tag { color: #888; font-size: 1.2rem; }
+
+.status { color: var(--status-visto); font-size: 0.9rem; font-weight: bold; }
+
+.profile-body {
+    padding: 20px;
+    background-color: #181818;
+}
+
+.bio h3 {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    background: #2a2a2a;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--accent-color);
+}
+
+.mini-review {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    background: #222;
+    padding: 10px;
+    border-radius: 8px;
+    align-items: center;
+    border-left: 3px solid var(--accent-color);
+}
+
+.mini-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.mini-review p {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #ddd;
+}
+
+.avatar, .mini-avatar {
+    object-fit: cover; /* Corta o GIF para preencher o círculo sem esticar */
+    object-position: center;
+    image-rendering: auto; /* Garante que a animação rode suave */
+}
+
+/* Efeito extra opcional: brilho neon no avatar quando o mouse passa */
+.avatar:hover {
+    box-shadow: 0 0 20px var(--accent-color);
+    transition: 0.5s;
+}
+
+/* Estilo do Modal */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9); /* Fundo escurecido */
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #111;
+    margin: 10% auto;
+    padding: 30px;
+    border: 2px solid var(--accent-color);
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+    text-align: center;
+    position: relative;
+}
+
+/* Título e Texto Neon */
+.neon-text-titulo {
+    color: #fff;
+    text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+    margin-bottom: 25px;
+    font-family: 'Lexend', sans-serif;
+}
+
+.neon-text-comentario {
+    color: #e0d7ff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-shadow: 0 0 5px rgba(139, 92, 246, 0.3);
+    font-style: italic;
+}
+
+.comentario-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.modal-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Botão Fechar */
+.close-button {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #aaa;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Botão de abrir no Card */
+.btn-comentario {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-comentario:hover {
+    background: var(--accent-color);
+    color: #fff;
+    box-shadow: 0 0 15px var(--accent-color);
+}

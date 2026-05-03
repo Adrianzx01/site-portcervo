@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrian | Portfólio & Acervo</title>
+    <link rel="icon" type="image/png" href="assets/icone_a.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+    <a href="javascript:void(0)" onclick="mostrarAba('perfil')">Adrian</a>
+    <a href="javascript:void(0)" onclick="mostrarAba('filmes')">Filmes</a>
+    <a href="javascript:void(0)" onclick="mostrarAba('series')">Séries</a>
+    <a href="javascript:void(0)" onclick="mostrarAba('hqs')">HQs</a>
+    <a href="javascript:void(0)" onclick="mostrarAba('mangas')">Mangás</a>
+    <a href="javascript:void(0)" onclick="mostrarAba('animes')">Animes</a>
+    <a href="javascript:void(0)" onclick="mostrarAba('jogos')">Jogos</a>
+    </nav>
+
+<main>
+    <section id="perfil" class="categoria aba-conteudo active">
+    <div class="discord-profile">
+        <div class="banner"></div>
+        <div class="profile-header">
+            <img src="assets/meu-avatar.gif" alt="Avatar" class="avatar">
+            <div class="user-info">
+                <h1>Adrian</h1>
+                <p class="status">🦇Programando...🍂</p>
+            </div>
+        </div>
+        
+        <div class="profile-body">
+            <div class="bio">
+                <h3>Sobre Mim</h3>
+                <p>🍂Apaixonado por programação e cultura pop. Este é um site desenvolvido por mim com o objetivo de registrar meu acervo pessoal de tudo que já consumi.🍂</p>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/adriansilvazx/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/Adrianzx01" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://instagram.com/auew._" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://open.spotify.com/user/1mcjj5ngcibtkbhu78fxh1st1" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
+                <a href="https://steamcommunity.com/profiles/76561199162957643/" target="_blank"><i class="fab fa-steam"></i> Steam</a>
+                <a href="https://soundcloud.com/auew_1" target="_blank"><i class="fab fa-soundcloud"></i> SoundCloud</a>
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="filmes" class="categoria aba-conteudo">
+    <h2><i class="fas fa-film"></i> Filmes</h2>
+    
+    <div class="filtros">
+        <button class="btn-filtro active" onclick="filtrar('filmes', 'todos')">Todos</button>
+        <button class="btn-filtro" onclick="filtrar('filmes', 'Visto')">Vistos</button>
+        <button class="btn-filtro" onclick="filtrar('filmes', 'Quero Ver')">Quero Ver</button>
+    </div>
+
+    <div class="grid" id="lista-filmes"></div>
+    </section>
+
+    <section id="mangas" class="categoria aba-conteudo">
+    <h2><i class="fas fa-book-open"></i> Mangás</h2>
+    <div class="filtros">
+        <button class="btn-filtro active" onclick="filtrar('mangas', 'todos')">Todos</button>
+        <button class="btn-filtro" onclick="filtrar('mangas', 'Lendo')">Lendo</button>
+        <button class="btn-filtro" onclick="filtrar('mangas', 'Lido')">Lido</button>
+        <button class="btn-filtro" onclick="filtrar('mangas', 'Quero Ler')">Quero Ler</button>
+    </div>
+    <div class="grid" id="lista-mangas"></div>
+    </section>
+
+    <section id="series" class="categoria aba-conteudo">
+    <h2><i class="fas fa-tv"></i> Séries</h2>
+    <div class="filtros">
+        <button class="btn-filtro active" onclick="filtrar('series', 'todos')">Todos</button>
+        <button class="btn-filtro" onclick="filtrar('series', 'Assistindo')">Assistindo</button>
+        <button class="btn-filtro" onclick="filtrar('series', 'Visto')">Visto</button>
+        <button class="btn-filtro" onclick="filtrar('series', 'Quero ver')">Quero ver</button>
+    </div>
+    <div class="grid" id="lista-series"></div>
+    </section>
+
+    <section id="hqs" class="categoria aba-conteudo">
+    <h2><i class="fas fa-book"></i> HQs</h2>
+    <div class="filtros">
+        <button class="btn-filtro active" onclick="filtrar('hqs', 'todos')">Todos</button>
+        <button class="btn-filtro" onclick="filtrar('hqs', 'Lendo')">Lendo</button>
+        <button class="btn-filtro" onclick="filtrar('hqs', 'Lido')">Lido</button>
+        <button class="btn-filtro" onclick="filtrar('hqs', 'Quero Ler')">Quero Ler</button>
+    </div>
+    <div class="grid" id="lista-hqs"></div>
+    </section>
+
+    <section id="animes" class="categoria aba-conteudo">
+    <h2><i class="fas fa-tv"></i> Animes</h2>
+    <div class="filtros">
+        <button class="btn-filtro active" onclick="filtrar('animes', 'todos')">Todos</button>
+        <button class="btn-filtro" onclick="filtrar('animes', 'Assistindo')">Assistindo</button>
+        <button class="btn-filtro" onclick="filtrar('animes', 'Visto')">Visto</button>
+        <button class="btn-filtro" onclick="filtrar('animes', 'Quero ver')">Quero ver</button>
+    </div>
+    <div class="grid" id="lista-animes"></div>
+    </section>
+
+    <section id="jogos" class="categoria aba-conteudo">
+    <h2><i class="fas fa-gamepad"></i> Jogos</h2>
+    <div class="filtros">
+        <button class="btn-filtro active" onclick="filtrar('jogos', 'todos')">Todos</button>
+        <button class="btn-filtro" onclick="filtrar('jogos', 'Jogando')">Jogando</button>
+        <button class="btn-filtro" onclick="filtrar('jogos', 'Jogado')">Jogado</button>
+        <button class="btn-filtro" onclick="filtrar('jogos', 'Quero Jogar')">Quero Jogar</button>
+    </div>
+    <div class="grid" id="lista-jogos"></div>
+    </section>
+    
+    </main>
+
+    <div id="modal-comentario" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="fecharModal()">&times;</span>
+        <h2 class="neon-text-titulo">O que achei disso?</h2>
+        <div class="comentario-container">
+            <img src="assets/meu-avatar.gif" class="modal-avatar">
+            <p id="texto-comentario" class="neon-text-comentario"></p>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
