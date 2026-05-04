@@ -9,5 +9,17 @@
     "status": "Assistindo",
     "nota": 10,
     "capa": "assets/capas/tboys.jpg"
+  },
+
+  {
+    "titulo": "Gen V",
+    "ano": 2023,
+    "criador": "Eric Kripke",
+    "temporadas": 2,
+    "episodios": 16,
+    "emissora": "Amazon Prime Video",
+    "status": "Visto",
+    "nota": 8,
+    "capa": "assets/capas/genv.jpg"
   }
 ]

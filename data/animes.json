@@ -9,5 +9,17 @@
     "status": "Visto",
     "nota": 9.33,
     "capa": "assets/capas/jjk.jpg"
+  },
+
+  {
+    "titulo": "Overlord",
+    "ano": 2015,
+    "estudio": "Madhouse",
+    "temporadas": 4,
+    "episodios": 52,
+    "genero": "Ação/Aventura/Fantasia",
+    "status": "Visto",
+    "nota": 7.75,
+    "capa": "assets/capas/overlo.jpg"
   }
 ]

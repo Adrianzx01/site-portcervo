@@ -8,5 +8,16 @@
     "status": "Lido",
     "nota": 8,
     "capa": "assets/capas/jjkma.jpg"
+  },
+
+  {
+    "titulo": "Sousou no Frieren",
+    "ano": 2020,
+    "autor": "Kanehito Yamada",
+    "genero": "Aventura/Fantasia",
+    "volumes_lidos": 15,
+    "status": "Lido",
+    "nota": 7.5,
+    "capa": "assets/capas/frierenma.jpg"
   }
 ]

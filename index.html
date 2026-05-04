@@ -9,14 +9,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <audio id="bg-audio" loop>
+    <source src="assets/music/background-music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-player-container" onclick="toggleMusic()">
+    
+    <div class="equalizer-container">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2"></div>
+        <div class="bar bar-3"></div>
+        <div class="bar bar-4"></div>
+    </div>
+
+    <div class="song-info">
+        <span class="song-title" id="music-text">Ouvir</span>
+        <span class="song-artist" id="music-subtext">Last Surprise - Persona 5</span>
+    </div>
+
+</div>
     <nav>
     <a href="javascript:void(0)" onclick="mostrarAba('perfil')">Adrian</a>
-    <a href="javascript:void(0)" onclick="mostrarAba('filmes')">Filmes</a>
-    <a href="javascript:void(0)" onclick="mostrarAba('series')">Séries</a>
-    <a href="javascript:void(0)" onclick="mostrarAba('hqs')">HQs</a>
-    <a href="javascript:void(0)" onclick="mostrarAba('mangas')">Mangás</a>
-    <a href="javascript:void(0)" onclick="mostrarAba('animes')">Animes</a>
-    <a href="javascript:void(0)" onclick="mostrarAba('jogos')">Jogos</a>
+    <a href="javascript:void(0)" onclick="mostrarAba('hobbies')">Hobbies</a>
     </nav>
 
 <main>
@@ -24,7 +38,7 @@
     <div class="discord-profile">
         <div class="banner"></div>
         <div class="profile-header">
-            <img src="assets/meu-avatar.gif" alt="Avatar" class="avatar">
+            <img src="assets/images/meu-avatar.gif" alt="Avatar" class="avatar">
             <div class="user-info">
                 <h1>Adrian</h1>
                 <p class="status">🦇Programando...🍂</p>
@@ -48,7 +62,21 @@
         </div>
     </div>
 </section>
+    <section id="hobbies" class="categoria aba-conteudo">
+    <h2 class="titulo-hobbies">Meus Hobbies</h2>
+    <div class="hobbies-grid">
+        <button onclick="mostrarAba('filmes')"><i class="fas fa-film"></i> Filmes</button>
+        <button onclick="mostrarAba('series')"><i class="fas fa-tv"></i> Séries</button>
+        <button onclick="mostrarAba('hqs')"><i class="fas fa-book"></i> HQs</button>
+        <button onclick="mostrarAba('mangas')"><i class="fas fa-book-open"></i> Mangás</button>
+        <button onclick="mostrarAba('animes')"><i class="fas fa-ghost"></i> Animes</button>
+        <button onclick="mostrarAba('jogos')"><i class="fas fa-gamepad"></i> Jogos</button>
+    </div>
+</section>
     <section id="filmes" class="categoria aba-conteudo">
+        <button onclick="mostrarAba('hobbies')" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </button>
     <h2><i class="fas fa-film"></i> Filmes</h2>
     
     <div class="filtros">
@@ -61,6 +89,9 @@
     </section>
 
     <section id="mangas" class="categoria aba-conteudo">
+        <button onclick="mostrarAba('hobbies')" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </button>
     <h2><i class="fas fa-book-open"></i> Mangás</h2>
     <div class="filtros">
         <button class="btn-filtro active" onclick="filtrar('mangas', 'todos')">Todos</button>
@@ -72,6 +103,9 @@
     </section>
 
     <section id="series" class="categoria aba-conteudo">
+        <button onclick="mostrarAba('hobbies')" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </button>
     <h2><i class="fas fa-tv"></i> Séries</h2>
     <div class="filtros">
         <button class="btn-filtro active" onclick="filtrar('series', 'todos')">Todos</button>
@@ -83,6 +117,9 @@
     </section>
 
     <section id="hqs" class="categoria aba-conteudo">
+        <button onclick="mostrarAba('hobbies')" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </button>
     <h2><i class="fas fa-book"></i> HQs</h2>
     <div class="filtros">
         <button class="btn-filtro active" onclick="filtrar('hqs', 'todos')">Todos</button>
@@ -94,7 +131,10 @@
     </section>
 
     <section id="animes" class="categoria aba-conteudo">
-    <h2><i class="fas fa-tv"></i> Animes</h2>
+        <button onclick="mostrarAba('hobbies')" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </button>
+    <h2><i class="fas fa-ghost"></i> Animes</h2>
     <div class="filtros">
         <button class="btn-filtro active" onclick="filtrar('animes', 'todos')">Todos</button>
         <button class="btn-filtro" onclick="filtrar('animes', 'Assistindo')">Assistindo</button>
@@ -105,6 +145,9 @@
     </section>
 
     <section id="jogos" class="categoria aba-conteudo">
+        <button onclick="mostrarAba('hobbies')" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </button>
     <h2><i class="fas fa-gamepad"></i> Jogos</h2>
     <div class="filtros">
         <button class="btn-filtro active" onclick="filtrar('jogos', 'todos')">Todos</button>
@@ -114,7 +157,6 @@
     </div>
     <div class="grid" id="lista-jogos"></div>
     </section>
-    
     </main>
 
     <div id="modal-comentario" class="modal">
@@ -122,7 +164,7 @@
         <span class="close-button" onclick="fecharModal()">&times;</span>
         <h2 class="neon-text-titulo">O que achei disso?</h2>
         <div class="comentario-container">
-            <img src="assets/meu-avatar.gif" class="modal-avatar">
+            <img src="assets/images/meu-avatar.gif" class="modal-avatar">
             <p id="texto-comentario" class="neon-text-comentario"></p>
         </div>
     </div>

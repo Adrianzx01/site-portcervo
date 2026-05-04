@@ -7,5 +7,15 @@
     "status": "Lido",
     "nota": 7,
     "capa": "assets/capas/bat1940_1.jpg"
-  }
+  },
+
+ {
+    "titulo": "Batman: O Cavaleiro Das Trevas",
+    "ano": 1986,
+    "autor": "Frank Miller",
+    "editora": "DC Comics",
+    "status": "Lido",
+    "nota": 10,
+    "capa": "assets/capas/dkbat.jpg"
+  } 
 ]

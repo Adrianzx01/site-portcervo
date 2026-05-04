@@ -129,6 +129,38 @@ function fecharModal() {
     document.getElementById('modal-comentario').style.display = "none";
 }
 
+const audio = document.getElementById('bg-audio');
+const musicPlayer = document.querySelector('.music-player-container');
+const musicText = document.getElementById('music-text');
+const musicSubtext = document.getElementById('music-subtext');
+
+function toggleMusic() {
+    if (audio.paused) {
+        audio.play();
+        audio.volume = 0.3;
+        musicPlayer.classList.add('playing');
+        
+        // Troca para o status de tocando
+        musicText.innerText = "Tocando";
+        musicSubtext.innerText = "Last Surprise - Persona 5";
+        musicSubtext.style.display = "block"; // Garante que o subtexto apareça
+    } else {
+        audio.pause();
+        musicPlayer.classList.remove('playing');
+        
+        // Volta para o texto de convite
+        musicText.innerText = "Ouvir";
+        musicSubtext.innerText = "Last Surprise - Persona 5";
+        // Opcional: você pode esconder o subtext ou deixar ele menor
+    }
+}
+
+// Opcional: Tentar tocar automaticamente ao primeiro clique no site
+document.addEventListener('click', () => {
+    // Se quiser que comece sozinho no primeiro clique, descomente abaixo:
+    // if (audio.paused) toggleMusic(); 
+}, { once: true });
+
 // Fechar se clicar fora da caixa
 window.onclick = function(event) {
     const modal = document.getElementById('modal-comentario');

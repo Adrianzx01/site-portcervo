@@ -7,5 +7,15 @@
     "status": "Visto",
     "nota": 10,
     "capa": "assets/capas/stardev.jpg"
+  },
+
+  {
+    "titulo": "John Wick 4: Baba Yaga",
+    "ano": "2023",
+    "diretor": "Chad Stahelski",
+    "genero": "Ação",
+    "status": "Visto",
+    "nota": 8.1,
+    "capa": "assets/capas/jwby.jpg"
   }
 ]

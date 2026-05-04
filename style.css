@@ -214,7 +214,7 @@ nav a.active-link {
 .banner {
     height: 120px; /* Ou a altura que você já definiu */
     width: 100%;
-    background-image: url('assets/seu-banner.gif'); /* Caminho do seu GIF */
+    background-image: url('assets/images/seu-banner.gif'); /* Caminho do seu GIF */
     background-size: cover; /* Faz o GIF ocupar todo o espaço sem sobrar fundo */
     background-position: center; /* Centraliza a animação */
     border-bottom: 1px solid #333;
@@ -399,4 +399,160 @@ nav a.active-link {
     background: var(--accent-color);
     color: #fff;
     box-shadow: 0 0 15px var(--accent-color);
+}
+.titulo-hobbies {
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 10px var(--accent-color);
+    margin-bottom: 30px;
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hobbies-grid button {
+    background: #111;
+    border: 1px solid var(--accent-color);
+    color: white;
+    padding: 30px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Lexend', sans-serif;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.hobbies-grid button i {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.hobbies-grid button:hover {
+    background: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--accent-color);
+}
+
+.hobbies-grid button:hover i {
+    color: white;
+}
+
+.btn-voltar {
+    background: transparent;
+    color: #888;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover {
+    color: var(--accent-color);
+}
+
+/* Container Principal do Player */
+.music-player-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(10, 10, 10, 0.9); /* Fundo quase preto */
+    border: 1px solid #8b5cf6; /* Seu roxo neon */
+    padding: 10px 20px;
+    border-radius: 10px; /* Bordas ligeiramente arredondadas, mais reto */
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+}
+
+.music-player-container:hover {
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+    transform: translateY(-3px);
+}
+
+/* --- Container do Equalizador --- */
+.equalizer-container {
+    display: flex;
+    align-items: flex-end;
+    width: 25px;
+    height: 20px;
+    gap: 2px;
+}
+
+/* Estilo Base das Barras */
+.bar {
+    width: 4px;
+    background: #a78bfa; /* Roxo mais claro para contraste */
+    border-radius: 2px;
+    height: 5px; /* Altura padrão quando pausado */
+    transition: height 0.2s ease;
+}
+
+/* --- Animação das Barras (Adicionada via JS) --- */
+.music-player-container.playing .bar {
+    animation: dance 1s ease-in-out infinite;
+}
+
+/* Atrasos diferentes para cada barra criar o efeito visual de equalização */
+.music-player-container.playing .bar-1 { animation-delay: -0.2s; height: 18px; }
+.music-player-container.playing .bar-2 { animation-delay: -0.4s; height: 12px; }
+.music-player-container.playing .bar-3 { animation-delay: -0.6s; height: 15px; }
+.music-player-container.playing .bar-4 { animation-delay: -0.8s; height: 10px; }
+
+
+/* --- Estilo das Informações da Música --- */
+.song-info {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lexend', sans-serif; /* Ou Urbanist, a que você usa */
+}
+
+.song-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+}
+
+.song-artist {
+    font-size: 0.7rem;
+    color: #a78bfa;
+    opacity: 0.8;
+}
+
+
+/* --- Definição da Animação (Keyframes) --- */
+@keyframes dance {
+    0%, 100% {
+        height: 5px;
+    }
+    50% {
+        height: 20px; /* Altura máxima */
+    }
+}
+
+.song-info span {
+    transition: all 0.3s ease;
+}
+
+/* Se quiser que o subtexto fique mais discreto quando pausado */
+.music-player-container:not(.playing) .song-artist {
+    opacity: 0.5;
+    font-size: 0.65rem;
 }
