@@ -21,5 +21,38 @@
     "status": "Visto",
     "nota": 7.75,
     "capa": "assets/capas/overlo.jpg"
+  },
+  {
+    "titulo": "Frieren e a Jornada para o Além",
+    "ano": 2023,
+    "estudio": "Madhouse",
+    "temporadas": 2,
+    "episodios": 38,
+    "genero": "Aventura/Fantasia",
+    "status": "Visto",
+    "nota": 9,
+    "capa": "assets/capas/frieren.jpg"
+  },
+  {
+    "titulo": "Solo Leveling",
+    "ano": 2024,
+    "estudio": "A-1 Pictures",
+    "temporadas": 2,
+    "episodios": 25,
+    "genero": "Ação/Aventura/Fantasia",
+    "status": "Visto",
+    "nota": 5,
+    "capa": "assets/capas/sololev.jpg"
+  },
+  {
+    "titulo": "Chainsaw Man",
+    "ano": 2022,
+    "estudio": "MAPPA",
+    "temporadas": 1,
+    "episodios": 12,
+    "genero": "Ação/Fantasia",
+    "status": "Visto",
+    "nota": 7,
+    "capa": "assets/capas/chainsaw.jpg"
   }
 ]

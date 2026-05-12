@@ -1,0 +1,9 @@
+[
+{
+    "titulo": "Portfólio",
+    "descricao": "Site dinâmico desenvolvido para listar consumos de mídia e apresentar projetos profissionais. Utiliza fetch dinâmico de arquivos JSON.",
+    "tecnologias": ["HTML", "CSS", "JavaScript"],
+    "link": "https://github.com/adrianzx01/site-portcervo",
+    "imagem": "assets/banner-portfolio.jpg"
+}
+]

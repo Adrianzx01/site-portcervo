@@ -556,3 +556,120 @@ nav a.active-link {
     opacity: 0.5;
     font-size: 0.65rem;
 }
+
+.grid-profissional {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card-profissional {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    transition: 0.3s;
+}
+
+.card-profissional:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+.horizontal { align-items: center; }
+
+.img-projeto, .logo-inst {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.tag {
+    background: #8b5cf6;
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.btn-link, .link-cert {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.periodo span { color: #10b981; } /* Verde para o status */
+
+/* Layout da Aba de Tecnologias */
+.tech-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+.tech-category h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 10px;
+}
+
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Estilo de cada "Chip" de Tecnologia */
+.tech-item {
+    background: rgba(139, 92, 246, 0.1); /* Roxo bem clarinho de fundo */
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 0.9rem;
+    transition: 0.3s all ease;
+}
+
+.tech-item i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.tech-item:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color);
+    transform: translateY(-2px);
+    color: #000; /* Texto fica preto no hover para destacar */
+}
+
+.tech-item:hover i {
+    color: #000;
+}
+
+/* Ajuste do Footer de Contato */
+.contato-footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #222;
+}

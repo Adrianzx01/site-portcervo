@@ -17,5 +17,32 @@
     "status": "Visto",
     "nota": 8.1,
     "capa": "assets/capas/jwby.jpg"
+  },
+  {
+    "titulo": "Batman O Cavaleiro das Trevas",
+    "ano": "2008",
+    "diretor": "Christopher Nolan",
+    "genero": "Ação/Crime",
+    "status": "Visto",
+    "nota": 9.7,
+    "capa": "assets/capas/batdkf.jpg"
+  },
+  {
+    "titulo": "Five Nights at Freddy's",
+    "ano": "2023",
+    "diretor": "Emma Tammi",
+    "genero": "Terror/Mistério",
+    "status": "Visto",
+    "nota": 6,
+    "capa": "assets/capas/fnaf1m.jpg"
+  },
+  {
+    "titulo": "Batman do Futuro O Retorno do Coringa",
+    "ano": "2000",
+    "diretor": "Curt Geda",
+    "genero": "Ficção científica/Ação",
+    "status": "Visto",
+    "nota": 10,
+    "capa": "assets/capas/batdofufilme.jpg"
   }
 ]

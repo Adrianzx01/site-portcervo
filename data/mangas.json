@@ -9,7 +9,6 @@
     "nota": 8,
     "capa": "assets/capas/jjkma.jpg"
   },
-
   {
     "titulo": "Sousou no Frieren",
     "ano": 2020,
@@ -19,5 +18,35 @@
     "status": "Lido",
     "nota": 7.5,
     "capa": "assets/capas/frierenma.jpg"
+  },
+  {
+    "titulo": "Record of Ragnarok",
+    "ano": 2017,
+    "autor": "Fukui Takumi",
+    "genero": "Ação/Fantasia",
+    "volumes_lidos": 27,
+    "status": "Lendo",
+    "nota": 6,
+    "capa": "assets/capas/ragnarok.jpg"
+  },
+  {
+    "titulo": "Naruto",
+    "ano": 1999,
+    "autor": "Masashi Kishimoto",
+    "genero": "Ação/Aventura/Fantasia",
+    "volumes_lidos": 72,
+    "status": "Lido",
+    "nota": 8,
+    "capa": "assets/capas/narutomac.jpg"
+  },
+  {
+    "titulo": "Kaguya-Sama",
+    "ano": 2015,
+    "autor": "Aka Akasaka",
+    "genero": "Comédia",
+    "volumes_lidos": 28,
+    "status": "Lido",
+    "nota": 8,
+    "capa": "assets/capas/kaguya.jpg"
   }
 ]

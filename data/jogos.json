@@ -10,7 +10,6 @@
     "nota": 9.4,
     "capa": "assets/capas/havedeath.jpg"
   },
-
   {
     "titulo": "Bendy And The Ink Machine",
     "ano": 2017,
@@ -21,5 +20,38 @@
     "status": "Jogado",
     "nota": 8,
     "capa": "assets/capas/batim.jpg"
+  },
+  {
+    "titulo": "Batman Arkham Knight",
+    "ano": 2015,
+    "genero": "Ação/Furtivo",
+    "desenvolvedor": "Rocksteady Studios",
+    "plataforma": "PC/Console",
+    "progresso": "89%",
+    "status": "Jogado",
+    "nota": 9.5,
+    "capa": "assets/capas/arkhamknight.jpg"
+  },
+  {
+    "titulo": "Cult of The Lamb",
+    "ano": 2022,
+    "genero": "Roguelike",
+    "desenvolvedor": "Massive Monster",
+    "plataforma": "PC/Console",
+    "progresso": "40%",
+    "status": "Jogando",
+    "nota": 8,
+    "capa": "assets/capas/cotl.jpg"
+  },
+  {
+    "titulo": "Forager",
+    "ano": 2019,
+    "genero": "Mundo Aberto/Indie",
+    "desenvolvedor": "HopFrog",
+    "plataforma": "PC/Console",
+    "progresso": "100%",
+    "status": "Jogado",
+    "nota": 7,
+    "capa": "assets/capas/forager.jpg"
   }
 ]

@@ -17,5 +17,32 @@
     "status": "Lido",
     "nota": 10,
     "capa": "assets/capas/dkbat.jpg"
-  } 
+  },
+  {
+    "titulo": "Batman Absoluto",
+    "ano": 2024,
+    "autor": "Scott Snyder",
+    "editora": "DC Comics",
+    "status": "Lido",
+    "nota": 8,
+    "capa": "assets/capas/absolute.jpg"
+  },
+  {
+    "titulo": "Flashpoint",
+    "ano": 2011,
+    "autor": "Geoff Johns",
+    "editora": "DC Comics",
+    "status": "Lido",
+    "nota": 9,
+    "capa": "assets/capas/flashpoint.jpg"
+  },
+  {
+    "titulo": "Marvel Spotlight #5",
+    "ano": 1972,
+    "autor": "Roy Thomas & Gary Friedrich",
+    "editora": "Marvel Comics",
+    "status": "Lido",
+    "nota": 8,
+    "capa": "assets/capas/motoqueiro.jpg"
+  }
 ]

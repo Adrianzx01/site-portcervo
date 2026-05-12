@@ -21,5 +21,38 @@
     "status": "Visto",
     "nota": 8,
     "capa": "assets/capas/genv.jpg"
+  },
+  {
+    "titulo": "Over The Garden Wall",
+    "ano": 2014,
+    "criador": "Patrick McHale",
+    "temporadas": 1,
+    "episodios": 10,
+    "emissora": "Cartoon Network",
+    "status": "Visto",
+    "nota": 10,
+    "capa": "assets/capas/otgw.jpg"
+  },
+  {
+    "titulo": "Regular Show",
+    "ano": 2010,
+    "criador": "J.G. Quintel",
+    "temporadas": 8,
+    "episodios": 261,
+    "emissora": "Cartoon Network",
+    "status": "Visto",
+    "nota": 8.5,
+    "capa": "assets/capas/regulars.jpg"
+  },
+  {
+    "titulo": "Gotham",
+    "ano": 2014,
+    "criador": "Bruno Heller",
+    "temporadas": 5,
+    "episodios": 100,
+    "emissora": "Fox Broadcasting Company",
+    "status": "Assistindo",
+    "nota": 7,
+    "capa": "assets/capas/gthm.jpg"
   }
 ]

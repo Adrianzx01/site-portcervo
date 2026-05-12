@@ -115,6 +115,10 @@ function mostrarAba(idAba) {
     // Usamos um seletor para achar o link que tem o onclick da aba atual
     const linkAtivo = Array.from(links).find(link => link.getAttribute('onclick').includes(idAba));
     if (linkAtivo) linkAtivo.classList.add('active-link');
+
+    if (idAba === 'projetos') carregarProjetos();
+    if (idAba === 'formacoes') carregarFormacoes();
+    if (idAba === 'certificados') carregarCertificados();
 }
 
 function abrirModal(texto) {
@@ -153,6 +157,71 @@ function toggleMusic() {
         musicSubtext.innerText = "Last Surprise - Persona 5";
         // Opcional: você pode esconder o subtext ou deixar ele menor
     }
+}
+
+// Função para carregar Projetos
+async function carregarProjetos() {
+    const response = await fetch('data/projetos.json');
+    const projetos = await response.json();
+    const container = document.getElementById('lista-projetos');
+    container.innerHTML = ''; // Limpa antes de carregar
+
+    projetos.forEach(proj => {
+        container.innerHTML += `
+            <div class="card-profissional">
+                <img src="${proj.imagem}" alt="${proj.titulo}" class="img-projeto">
+                <div class="info-projeto">
+                    <h3>${proj.titulo}</h3>
+                    <p>${proj.descricao}</p>
+                    <div class="tags">
+                        ${proj.tecnologias.map(t => `<span class="tag">${t}</span>`).join('')}
+                    </div>
+                    <a href="${proj.link}" target="_blank" class="btn-link">Ver Repositório</a>
+                </div>
+            </div>
+        `;
+    });
+}
+
+// Função para carregar Formações
+async function carregarFormacoes() {
+    const response = await fetch('data/formacoes.json');
+    const dados = await response.json();
+    const container = document.getElementById('lista-formacoes');
+    container.innerHTML = '';
+
+    dados.forEach(item => {
+        container.innerHTML += `
+            <div class="card-profissional horizontal">
+                <img src="${item.imagem}" class="logo-inst">
+                <div>
+                    <h3>${item.curso}</h3>
+                    <p class="inst">${item.instituicao}</p>
+                    <p class="periodo">${item.periodo} • <span>${item.status}</span></p>
+                </div>
+            </div>
+        `;
+    });
+}
+
+// Função para carregar Certificados
+async function carregarCertificados() {
+    const response = await fetch('data/certificados.json');
+    const dados = await response.json();
+    const container = document.getElementById('lista-certificados');
+    container.innerHTML = '';
+
+    dados.forEach(c => {
+        container.innerHTML += `
+            <div class="card-profissional horizontal">
+                <div class="cert-info">
+                    <h3>${c.nome}</h3>
+                    <p>${c.emissor} • ${c.data}</p>
+                    <a href="${c.link}" target="_blank" class="link-cert">Ver Credencial <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        `;
+    });
 }
 
 // Opcional: Tentar tocar automaticamente ao primeiro clique no site
