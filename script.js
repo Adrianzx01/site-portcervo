@@ -20,10 +20,10 @@ function renderizarCards(categoria, idContainer, itens) {
         card.className = 'card';
         
         let infoExtra = "";
-        let labelStatus = "Status"; // Padrão
+        let labelStatus = "Status";
         let valorStatus = item.status || "N/A";
 
-        // Mapeamento específico por categoria conforme seus JSONs
+        // Mapeamento específico por categoria conforme JSONs
         if (categoria === "filmes") {
             infoExtra = `
                 <p><strong>Ano:</strong> ${item.ano}</p>
@@ -53,8 +53,8 @@ function renderizarCards(categoria, idContainer, itens) {
                 <p><strong>Autor:</strong> ${item.autor}</p>
                 <p><strong>Editora:</strong> ${item.editora}</p>`;
         } else if (categoria === "jogos") {
-            labelStatus = "Progresso"; // Muda o nome para Jogos
-            valorStatus = item.progresso; // Pega o valor do campo progresso
+            labelStatus = "Progresso"; 
+            valorStatus = item.progresso; 
             infoExtra = `
                 <p><strong>Ano:</strong> ${item.ano}</p>
                 <p><strong>Desenvolvedor:</strong> ${item.desenvolvedor}</p>
@@ -112,7 +112,6 @@ function mostrarAba(idAba) {
     }
 
     // 4. Destacar o link clicado no menu
-    // Usamos um seletor para achar o link que tem o onclick da aba atual
     const linkAtivo = Array.from(links).find(link => link.getAttribute('onclick').includes(idAba));
     if (linkAtivo) linkAtivo.classList.add('active-link');
 
@@ -147,7 +146,7 @@ function toggleMusic() {
         // Troca para o status de tocando
         musicText.innerText = "Tocando";
         musicSubtext.innerText = "Last Surprise - Persona 5";
-        musicSubtext.style.display = "block"; // Garante que o subtexto apareça
+        musicSubtext.style.display = "block";
     } else {
         audio.pause();
         musicPlayer.classList.remove('playing');
@@ -155,7 +154,6 @@ function toggleMusic() {
         // Volta para o texto de convite
         musicText.innerText = "Ouvir";
         musicSubtext.innerText = "Last Surprise - Persona 5";
-        // Opcional: você pode esconder o subtext ou deixar ele menor
     }
 }
 
@@ -164,7 +162,7 @@ async function carregarProjetos() {
     const response = await fetch('data/projetos.json');
     const projetos = await response.json();
     const container = document.getElementById('lista-projetos');
-    container.innerHTML = ''; // Limpa antes de carregar
+    container.innerHTML = ''; 
 
     projetos.forEach(proj => {
         container.innerHTML += `
@@ -224,7 +222,6 @@ async function carregarCertificados() {
     });
 }
 
-// Opcional: Tentar tocar automaticamente ao primeiro clique no site
 document.addEventListener('click', () => {
     // Se quiser que comece sozinho no primeiro clique, descomente abaixo:
     // if (audio.paused) toggleMusic(); 
@@ -241,7 +238,7 @@ window.onclick = function(event) {
 // Para o site não abrir vazio, definimos uma aba inicial ao carregar
 window.onload = () => {
     setTimeout(() => {
-        mostrarAba('perfil'); // Abre em filmes por padrão após o carregamento
+        mostrarAba('perfil');
     }, 100);
 };
 
